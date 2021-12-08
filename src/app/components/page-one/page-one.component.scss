@@ -6,11 +6,11 @@
 }
 
 .profit {
-  @apply text-green-500;
+  @apply bg-green-500 text-white shadow-md rounded-lg px-2 py-1;
 }
 
 .loss {
-  @apply text-red-500;
+  @apply bg-red-500 text-white shadow-md rounded-lg px-2 py-1;
 }
 
 .sector {
@@ -23,11 +23,7 @@
     display: flex;
     justify-content: flex-end;
     & > span {
-      background-color: #fff;
-      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.13);
       width: fit-content;
-      border-radius: 16px;
-      padding: 4px;
     }
   }
 }
@@ -41,11 +37,8 @@
   div:last-child {
     display: flex;
     justify-content: flex-end;
-    span {
-      background-color: #fff;
+    & > span {
       width: fit-content;
-      border-radius: 16px;
-      padding: 4px;
     }
   }
 }
