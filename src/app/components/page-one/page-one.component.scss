@@ -1,20 +1,20 @@
 .item {
-  @apply flex flex-col justify-between shadow-md w-2/12 h-72 p-4 bg-gray-100 flex-shrink-0;
+  @apply flex flex-col justify-between shadow-md md:w-2/12 w-5/12 h-72 p-4 bg-gray-100 flex-shrink-0;
   div:last-child {
     align-items: flex-end;
   }
 }
 
 .profit {
-  @apply bg-green-500 text-white shadow-md rounded-lg px-2 py-1;
+  @apply bg-green-500 text-white shadow-md rounded-lg px-2 py-1 whitespace-nowrap;
 }
 
 .loss {
-  @apply bg-red-500 text-white shadow-md rounded-lg px-2 py-1;
+  @apply bg-red-500 text-white shadow-md rounded-lg px-2 py-1 whitespace-nowrap;
 }
 
 .sector {
-  @apply flex flex-col justify-between shadow-sm h-40 p-4 flex-shrink-0;
+  @apply flex flex-col justify-between shadow-sm h-40 p-4 md:mb-0 mb-4 flex-shrink-0 md:w-3/12 w-full flex-grow border;
   background-image: url("https://image.freepik.com/free-photo/man-analyzing-stock-market-charts-financial-data-electronic-board_169016-14897.jpg");
   background-repeat: no-repeat;
   background-size: 100%;

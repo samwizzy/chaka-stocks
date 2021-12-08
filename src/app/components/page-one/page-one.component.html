@@ -1,4 +1,4 @@
-<div class="max-w-6xl mx-auto my-16 md:p-0 p-8">
+<div class="max-w-7xl mx-auto my-16 md:px-0 px-8">
   <div class="mb-4">
     <span class="uppercase font-thin text-xs">market view</span>
     <h2 class="font-bold text-lg text-gray-800">Today's market briefing.</h2>
@@ -26,14 +26,14 @@
     </p>
   </div>
 
-  <div class="grid grid-cols-12 gap-8 mt-6">
-    <div class="col-span-12 md:col-span-8">
+  <div class="grid grid-cols-12 md:gap-8 gap-0 mt-6">
+    <div class="col-span-12 md:col-span-8 md:mb-0 mb-8">
       <h3 class="font-bold text-lg text-gray-800">Sector hightlights</h3>
       <span class="text-gray-600 text-sm font-thin"
         >Dec 29 2020 09:10:23 pm</span
       >
 
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid md:grid-cols-2 md:gap-4 gap-0">
         <div
           class="border h-32 md:grid-cols-1 grid-cols-2 highlight"
           *ngFor="let item of highlights | slice: 1:3"
@@ -57,10 +57,10 @@
         <span class="font-bold text-lg text-gray-800">My watchlist</span>
         <mat-icon aria-label="star">star</mat-icon>
       </h3>
-      <span class="text-gray-600 text-sm font-thin"
-        >Your watchlist is empty, build your watchlist by starring the stock you
-        want to follow</span
-      >
+      <span class="text-gray-600 text-sm font-thin">
+        Your watchlist is empty, build your watchlist by starring the stock you
+        want to follow
+      </span>
     </div>
   </div>
 
@@ -79,59 +79,65 @@
   <div class="mt-6">
     <h2 class="font-bold text-lg text-gray-800">Earnings</h2>
 
-    <table mat-table [dataSource]="earnings" class="mat-elevation-z0 w-full">
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef>Symbol.</th>
-        <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
-      </ng-container>
+    <div class="overflow-x-auto">
+      <table mat-table [dataSource]="earnings" class="mat-elevation-z0 w-full">
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>Symbol</th>
+          <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+        </ng-container>
 
-      <!-- Company Column -->
-      <ng-container matColumnDef="company">
-        <th mat-header-cell *matHeaderCellDef>Company</th>
-        <td mat-cell *matCellDef="let element">{{ element.company }}</td>
-      </ng-container>
+        <ng-container matColumnDef="company">
+          <th mat-header-cell *matHeaderCellDef>Company</th>
+          <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+        </ng-container>
 
-      <!-- Fiscal Period Column -->
-      <ng-container matColumnDef="fiscalPeriod">
-        <th mat-header-cell *matHeaderCellDef>Fiscal Period</th>
-        <td mat-cell *matCellDef="let element">{{ element.fiscalPeriod }}</td>
-      </ng-container>
+        <ng-container matColumnDef="fiscalPeriod">
+          <th mat-header-cell *matHeaderCellDef class="whitespace-nowrap">
+            Fiscal Period
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.fiscalPeriod }}</td>
+        </ng-container>
 
-      <!-- Consensus Estimated EPS Column -->
-      <ng-container matColumnDef="estimatedEps">
-        <th mat-header-cell *matHeaderCellDef>Consensus Estimated EPS</th>
-        <td mat-cell *matCellDef="let element">{{ element.estimatedEps }}</td>
-      </ng-container>
+        <ng-container matColumnDef="estimatedEps">
+          <th mat-header-cell *matHeaderCellDef class="whitespace-nowrap">
+            Consensus Estimated EPS
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.estimatedEps }}</td>
+        </ng-container>
 
-      <!-- Actual EPS Column -->
-      <ng-container matColumnDef="actualEps">
-        <th mat-header-cell *matHeaderCellDef>Actual EPS</th>
-        <td mat-cell *matCellDef="let element">{{ element.actualEps }}</td>
-      </ng-container>
+        <ng-container matColumnDef="actualEps">
+          <th mat-header-cell *matHeaderCellDef class="whitespace-nowrap">
+            Actual EPS
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.actualEps }}</td>
+        </ng-container>
 
-      <!-- EPS, Year ago Column -->
-      <ng-container matColumnDef="epsPerYear">
-        <th mat-header-cell *matHeaderCellDef>EPS, Year ago</th>
-        <td mat-cell *matCellDef="let element">{{ element.epsPerYear }}</td>
-      </ng-container>
+        <ng-container matColumnDef="epsPerYear">
+          <th mat-header-cell *matHeaderCellDef class="whitespace-nowrap">
+            EPS, Year ago
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.epsPerYear }}</td>
+        </ng-container>
 
-      <!-- Surprise Column -->
-      <ng-container matColumnDef="surprise">
-        <th mat-header-cell *matHeaderCellDef>Surprise</th>
-        <td mat-cell *matCellDef="let element">{{ element.surprise }}</td>
-      </ng-container>
+        <ng-container matColumnDef="surprise">
+          <th mat-header-cell *matHeaderCellDef>Surprise</th>
+          <td mat-cell *matCellDef="let element">{{ element.surprise }}</td>
+        </ng-container>
 
-      <!-- % Change from last year Column -->
-      <ng-container matColumnDef="changeFromLastYear">
-        <th mat-header-cell *matHeaderCellDef>% Change from last year</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.changeFromLastYear }}
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="changeFromLastYear">
+          <th mat-header-cell *matHeaderCellDef class="whitespace-nowrap">
+            % Change from last year
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.changeFromLastYear }}
+          </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+
     <hr class="border-t border-gray-100 my-4" />
   </div>
 
@@ -139,9 +145,9 @@
     <h2 class="font-bold text-lg text-gray-800">Sector Performer</h2>
     <span class="font-thin text-sm">Dec 29 2020 09:10:23 pm</span>
 
-    <div class="flex gap-4 items-center flex-wrap mt-4">
+    <div class="md:flex block md:gap-4 items-center md:flex-wrap mt-4">
       <div
-        class="w-3/12 h-32 flex-grow border sector"
+        class="sector"
         *ngFor="let item of sectors"
         [style.background-image]="'url(' + item.image + ')'"
       >
