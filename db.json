@@ -1,0 +1,187 @@
+{
+  "stocks": [
+    {
+      "id": 1,
+      "company": "BNGO",
+      "slug": "Bionano Geonomics Inc.",
+      "rate": 57.2,
+      "amount": "1.39"
+    },
+    {
+      "id": 2,
+      "company": "APPL",
+      "slug": "Apple Inc",
+      "rate": 0.96,
+      "amount": "135,355"
+    },
+    {
+      "id": 3,
+      "company": "INTC",
+      "slug": "Intl Corp.",
+      "rate": 5.15,
+      "amount": "49,495"
+    },
+    {
+      "id": 4,
+      "company": "GEVO",
+      "slug": "Gevo Inc",
+      "rate": 2.49,
+      "amount": "4.70"
+    },
+    {
+      "id": 5,
+      "company": "FCEL",
+      "slug": "Fuelcell Energy Inc",
+      "rate": 7.41,
+      "amount": "10.69"
+    },
+    {
+      "id": 6,
+      "company": "SNAP",
+      "slug": "Snap Inc - Class A",
+      "rate": 5.02,
+      "amount": "50.68"
+    },
+    {
+      "id": 7,
+      "company": "AAL",
+      "slug": "American Airline Group",
+      "rate": 1.59,
+      "amount": "15.805"
+    },
+    {
+      "id": 8,
+      "company": "OCGN",
+      "slug": "Ocugen Inc",
+      "rate": 7.56,
+      "amount": "2.08"
+    },
+    {
+      "id": 9,
+      "company": "PLTR",
+      "slug": "Palantir Technology Inc - Class A",
+      "rate": 3.69,
+      "amount": "24.685"
+    },
+    {
+      "id": 10,
+      "company": "GE",
+      "slug": "General Electric co.",
+      "rate": 0.47,
+      "amount": "10.59"
+    }
+  ],
+  "earnings": [
+    {
+      "id": 1,
+      "symbol": "USD",
+      "company": "APPL",
+      "fiscalPeriod": "2021",
+      "estimatedEps": "400000",
+      "actualEps": "520000",
+      "surprise": "GRANT",
+      "epsPerYear": "2022",
+      "changeFromLastYear": "2020"
+    }
+  ],
+  "sectors": [
+    {
+      "id": 1,
+      "name": "Health care",
+      "rate": 0.46,
+      "image": "https://image.freepik.com/free-photo/stock-market-graph-financial-data-electronic-board-laptop-screen_169016-14898.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Communication services",
+      "rate": 0.0,
+      "image": "https://img.freepik.com/free-photo/coins-bottles-with-trading-graph_1150-17751.jpg?size=338&ext=jpg"
+    },
+    {
+      "id": 3,
+      "name": "Utilities",
+      "rate": 0.07,
+      "image": "https://image.freepik.com/free-photo/stock-market-economy-investment-financial-concept_53876-121532.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Consumer discretionary",
+      "rate": 0.07,
+      "image": "https://image.freepik.com/free-vector/stock-market-illustration-with-bull-bear_1017-9635.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Financial",
+      "rate": 0.33,
+      "image": "https://image.freepik.com/free-photo/billie-dollar-with-business-chart_1150-750.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Consumer staples",
+      "rate": 0.38,
+      "image": "https://image.freepik.com/free-photo/stock-finance-business-banking-forex-money-concept_53876-122987.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Materials",
+      "rate": 0.42,
+      "image": "https://image.freepik.com/free-vector/buy-sell-trend-forex-trading-background_1017-31712.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Technology",
+      "rate": 0.51,
+      "image": "https://image.freepik.com/free-vector/forex-trading-stock-market-background_1017-31713.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Real estate",
+      "rate": 0.55,
+      "image": "https://image.freepik.com/free-photo/stock-exchange-trading-forex-finance-graphic-concept_53876-120907.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Energy",
+      "rate": 0.55,
+      "image": "https://image.freepik.com/free-photo/bitcoin-financial-technology-with-businesswoman-using-laptop-background_53876-104209.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Industrials",
+      "rate": 0.78,
+      "image": "https://image.freepik.com/free-psd/business-statistics-bar-graph_53876-12055.jpg"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Another profitable cannabis cannibis producer: Greenway green house posts first results since market debut",
+      "description": "Greenway Green house (CSE.GWAY) released its first quarter financial statements since hitting markets in september. Revenue came in at C$1.50 millions ($908,092) with gross profit before fair value adjustments at $C532.263. The company however reported a net loss C$1...",
+      "image": "https://image.freepik.com/free-vector/hand-drawn-stock-market-concept_23-2149181470.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Another profitable cannabis cannibis producer: Greenway green house posts first results since market debut",
+      "description": "Greenway Green house (CSE.GWAY) released its first quarter financial statements since hitting markets in september. Revenue came in at C$1.50 millions ($908,092) with gross profit before fair value adjustments at $C532.263. The company however reported a net loss C$1...",
+      "image": "https://image.freepik.com/free-photo/stock-exchange-trading-forex-finance-graphic-concept_53876-128042.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Another profitable cannabis cannibis producer: Greenway green house posts first results since market debut",
+      "description": "Greenway Green house (CSE.GWAY) released its first quarter financial statements since hitting markets in september. Revenue came in at C$1.50 millions ($908,092) with gross profit before fair value adjustments at $C532.263. The company however reported a net loss C$1...",
+      "image": "https://img.freepik.com/free-photo/stock-market-economy-investment-financial-concept_53876-121532.jpg?size=338&ext=jpg"
+    },
+    {
+      "id": 4,
+      "title": "Another profitable cannabis cannibis producer: Greenway green house posts first results since market debut",
+      "description": "Greenway Green house (CSE.GWAY) released its first quarter financial statements since hitting markets in september. Revenue came in at C$1.50 millions ($908,092) with gross profit before fair value adjustments at $C532.263. The company however reported a net loss C$1...",
+      "image": "https://image.freepik.com/free-vector/hand-drawn-stock-market-concept_23-2149181470.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Another profitable cannabis cannibis producer: Greenway green house posts first results since market debut",
+      "description": "Greenway Green house (CSE.GWAY) released its first quarter financial statements since hitting markets in september. Revenue came in at C$1.50 millions ($908,092) with gross profit before fair value adjustments at $C532.263. The company however reported a net loss C$1...",
+      "image": "https://image.freepik.com/free-vector/hand-drawn-cryptocurrency-concept_23-2149181468.jpg"
+    }
+  ]
+}

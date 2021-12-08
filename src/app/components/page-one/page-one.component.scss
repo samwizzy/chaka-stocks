@@ -1,0 +1,51 @@
+.item {
+  @apply flex flex-col justify-between shadow-md w-2/12 h-72 p-4 bg-gray-100 flex-shrink-0;
+  div:last-child {
+    align-items: flex-end;
+  }
+}
+
+.profit {
+  @apply text-green-500;
+}
+
+.loss {
+  @apply text-red-500;
+}
+
+.sector {
+  @apply flex flex-col justify-between shadow-sm h-40 p-4 flex-shrink-0;
+  background-image: url("https://image.freepik.com/free-photo/man-analyzing-stock-market-charts-financial-data-electronic-board_169016-14897.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    & > span {
+      background-color: #fff;
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.13);
+      width: fit-content;
+      border-radius: 16px;
+      padding: 4px;
+    }
+  }
+}
+
+.highlight {
+  @apply flex flex-col justify-between shadow-sm h-40 p-4 flex-shrink-0;
+  background-image: url("https://image.freepik.com/free-photo/stock-market-graph-financial-data-electronic-board-laptop-screen_169016-14898.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    span {
+      background-color: #fff;
+      width: fit-content;
+      border-radius: 16px;
+      padding: 4px;
+    }
+  }
+}

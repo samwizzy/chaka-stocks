@@ -1,0 +1,161 @@
+<div class="max-w-6xl mx-auto my-16 md:p-0 p-8">
+  <div class="mb-4">
+    <span class="uppercase font-thin text-xs">market view</span>
+    <h2 class="font-bold text-lg text-gray-800">Today's market briefing.</h2>
+  </div>
+
+  <div class="flex space-x-3 items-center overflow-x-auto">
+    <div class="item" *ngFor="let item of stocks">
+      <div>
+        <h3 class="font-bold">{{ item.company }}</h3>
+        <span class="font-thin text-sm">{{ item.slug }}</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold">{{ item.amount }}</span>
+        <span [ngClass]="item.rate > 2 ? 'profit' : 'loss'">
+          <span *ngIf="item.rate > 2; else elseBlock">+</span>
+          <ng-template #elseBlock>-</ng-template>
+          {{ item.rate }}%
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="text-gray-600 text-sm font-thin">
+      Active stocks last updated Dec 29 2021
+    </p>
+  </div>
+
+  <div class="grid grid-cols-12 gap-8 mt-6">
+    <div class="col-span-12 md:col-span-8">
+      <h3 class="font-bold text-lg text-gray-800">Sector hightlights</h3>
+      <span class="text-gray-600 text-sm font-thin"
+        >Dec 29 2020 09:10:23 pm</span
+      >
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div
+          class="border h-32 md:grid-cols-1 grid-cols-2 highlight"
+          *ngFor="let item of highlights | slice: 1:3"
+          [style.background-image]="'url(' + item.image + ')'"
+        >
+          <div>
+            <h3 class="font-bold text-gray-50">{{ item.name }}</h3>
+          </div>
+          <div>
+            <span [ngClass]="item.rate > 0.2 ? 'profit' : 'loss'">
+              <span *ngIf="item.rate > 0.2; else elseBlock">+</span>
+              <ng-template #elseBlock>-</ng-template>
+              {{ item.rate }}%
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 md:col-span-4">
+      <h3 class="flex items-center">
+        <span class="font-bold text-lg text-gray-800">My watchlist</span>
+        <mat-icon aria-label="star">star</mat-icon>
+      </h3>
+      <span class="text-gray-600 text-sm font-thin"
+        >Your watchlist is empty, build your watchlist by starring the stock you
+        want to follow</span
+      >
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <h2 class="font-bold text-lg text-gray-800">Ex-Dividends</h2>
+    <div class="w-full md:flex block items-center justify-between">
+      <div class="text-sm text-gray-700">Symbol</div>
+      <div class="text-sm text-gray-700">Amount</div>
+    </div>
+    <hr class="border-t border-gray-100 my-4" />
+    <div class="text-gray-600 text-sm font-thin">
+      There are no upcoming dividends
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <h2 class="font-bold text-lg text-gray-800">Earnings</h2>
+
+    <table mat-table [dataSource]="earnings" class="mat-elevation-z0 w-full">
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Symbol.</th>
+        <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+      </ng-container>
+
+      <!-- Company Column -->
+      <ng-container matColumnDef="company">
+        <th mat-header-cell *matHeaderCellDef>Company</th>
+        <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+      </ng-container>
+
+      <!-- Fiscal Period Column -->
+      <ng-container matColumnDef="fiscalPeriod">
+        <th mat-header-cell *matHeaderCellDef>Fiscal Period</th>
+        <td mat-cell *matCellDef="let element">{{ element.fiscalPeriod }}</td>
+      </ng-container>
+
+      <!-- Consensus Estimated EPS Column -->
+      <ng-container matColumnDef="estimatedEps">
+        <th mat-header-cell *matHeaderCellDef>Consensus Estimated EPS</th>
+        <td mat-cell *matCellDef="let element">{{ element.estimatedEps }}</td>
+      </ng-container>
+
+      <!-- Actual EPS Column -->
+      <ng-container matColumnDef="actualEps">
+        <th mat-header-cell *matHeaderCellDef>Actual EPS</th>
+        <td mat-cell *matCellDef="let element">{{ element.actualEps }}</td>
+      </ng-container>
+
+      <!-- EPS, Year ago Column -->
+      <ng-container matColumnDef="epsPerYear">
+        <th mat-header-cell *matHeaderCellDef>EPS, Year ago</th>
+        <td mat-cell *matCellDef="let element">{{ element.epsPerYear }}</td>
+      </ng-container>
+
+      <!-- Surprise Column -->
+      <ng-container matColumnDef="surprise">
+        <th mat-header-cell *matHeaderCellDef>Surprise</th>
+        <td mat-cell *matCellDef="let element">{{ element.surprise }}</td>
+      </ng-container>
+
+      <!-- % Change from last year Column -->
+      <ng-container matColumnDef="changeFromLastYear">
+        <th mat-header-cell *matHeaderCellDef>% Change from last year</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.changeFromLastYear }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <hr class="border-t border-gray-100 my-4" />
+  </div>
+
+  <div class="mt-6">
+    <h2 class="font-bold text-lg text-gray-800">Sector Performer</h2>
+    <span class="font-thin text-sm">Dec 29 2020 09:10:23 pm</span>
+
+    <div class="flex gap-4 items-center flex-wrap mt-4">
+      <div
+        class="w-3/12 h-32 flex-grow border sector"
+        *ngFor="let item of sectors"
+        [style.background-image]="'url(' + item.image + ')'"
+      >
+        <div>
+          <h3 class="font-bold text-gray-50">{{ item.name }}</h3>
+        </div>
+        <div>
+          <span [ngClass]="item.rate > 0.2 ? 'profit' : 'loss'">
+            <span *ngIf="item.rate > 0.2; else elseBlock">+</span>
+            <ng-template #elseBlock>-</ng-template>
+            {{ item.rate }}%
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

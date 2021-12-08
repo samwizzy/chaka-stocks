@@ -1,0 +1,16 @@
+<div class="max-w-6xl mx-auto my-16 md:p-0 p-8">
+  <div class="md:flex block items-start md:mb-4 mb-8" *ngFor="let item of news">
+    <div class="mr-4 flex-shrink-0">
+      <img class="md:w-40 w-full" src="{{ item.image }}" alt="" />
+    </div>
+    <div class="">
+      <h3 class="font-bold text-gray-800 text-lg">
+        {{ item.title }}
+      </h3>
+      <p class="text-sm text-gray-600">
+        {{ item.description }}
+      </p>
+      <span>Read more</span>
+    </div>
+  </div>
+</div>
