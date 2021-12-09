@@ -3,13 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-appbar',
   templateUrl: './appbar.component.html',
-  styleUrls: ['./appbar.component.scss']
+  styleUrls: ['./appbar.component.scss'],
 })
 export class AppbarComponent implements OnInit {
+  open: Boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+  openMenu = () => {
+    this.open = !this.open;
+  };
 }
