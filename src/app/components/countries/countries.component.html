@@ -1,0 +1,13 @@
+<div class="max-w-6xl mx-auto my-8">
+  <mat-form-field appearance="outline">
+    <mat-label>Select countries</mat-label>
+    <mat-select>
+      <mat-option
+        *ngFor="let country of countries$ | async"
+        [value]="country.name"
+      >
+        {{ country.emoji }} {{ country.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

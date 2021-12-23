@@ -1,0 +1,4 @@
+<div class="book-item" *ngFor="let question of questions$ | async">
+  <p>{{ question.title }}</p>
+  <span> {{ question.body }}</span>
+</div>

@@ -23,17 +23,19 @@
   <div class="grid grid-cols-12 gap-8 mt-6">
     <div class="col-span-12 md:col-span-8">
       <h3 class="font-bold text-lg text-gray-800">Sector hightlights</h3>
-      <span class="text-gray-600 text-sm font-thin">Dec</span>
+
+      <app-echarts></app-echarts>
     </div>
     <div class="col-span-12 md:col-span-4">
-      <h3 class="flex items-center">
-        <span class="font-bold text-lg text-gray-800">My watchlist</span>
-        <mat-icon aria-label="star">star</mat-icon>
-      </h3>
-      <span class="text-gray-600 text-sm font-thin"
-        >Your watchlist is empty, build your watchlist by starring the stock you
-        want to follow</span
-      >
+      <div class="w-full p-6 rounded-lg shadow-sm border">
+        <mat-list>
+          <mat-list-item> Pepper </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item> Salt </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item> Paprika </mat-list-item>
+        </mat-list>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,52 @@
+<div class="max-w-7xl mx-auto my-16 md:px-0 px-8">
+  <div class="mb-4">
+    <span class="uppercase font-thin text-xs">Welcome back</span>
+    <h2 class="font-bold text-lg text-gray-800">Login to see more</h2>
+  </div>
+
+  <div class="grid grid-cols-12 md:gap-8 gap-0">
+    <div class="col-span-12 md:col-span-4">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Email address</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="Ex. pat@example.com"
+            formControlName="emailAddress"
+          />
+          <mat-error *ngIf=""> Please enter a valid email address </mat-error>
+          <mat-error *ngIf="form.controls['emailAddress'].errors?.required">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Ex. *******"
+            formControlName="password"
+          />
+          <mat-error *ngIf="form.controls['password'].errors?.required">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="mt-6">
+          <button
+            mat-stroked-button
+            color="primary"
+            type="submit"
+            class="uppercase"
+            [disabled]="!form.valid"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-span-12 md:col-span-8 bg-image"></div>
+  </div>
+</div>

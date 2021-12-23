@@ -73,14 +73,16 @@
             alt="Workflow"
           />
         </div>
-        <div class="hidden sm:block sm:ml-6">
+        <div class="hidden sm:block sm:ml-6 flex-1">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a
               [routerLink]="['/']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
               class="
-                bg-gray-900
-                text-white
+                text-gray-300
+                hover:bg-gray-700 hover:text-white
                 px-3
                 py-2
                 rounded-md
@@ -89,11 +91,12 @@
               "
               aria-current="page"
             >
-              Page one
+              Dashboard
             </a>
 
             <a
               [routerLink]="['/page-two']"
+              routerLinkActive="active"
               class="
                 text-gray-300
                 hover:bg-gray-700 hover:text-white
@@ -104,11 +107,12 @@
                 font-medium
               "
             >
-              Page two
+              Analytics
             </a>
 
             <a
               [routerLink]="['/page-three']"
+              routerLinkActive="active"
               class="
                 text-gray-300
                 hover:bg-gray-700 hover:text-white
@@ -119,9 +123,42 @@
                 font-medium
               "
             >
-              Page three
+              News
             </a>
           </div>
+        </div>
+
+        <div class="sm:flex space-x-2 hidden">
+          <a
+            [routerLink]="['/register']"
+            routerLinkActive="active"
+            class="
+              text-gray-300
+              hover:bg-gray-700 hover:text-white
+              px-3
+              py-2
+              rounded-md
+              text-sm
+              font-medium
+            "
+          >
+            Register
+          </a>
+          <a
+            [routerLink]="['/login']"
+            routerLinkActive="active"
+            class="
+              text-gray-300
+              hover:bg-gray-700 hover:text-white
+              px-3
+              py-2
+              rounded-md
+              text-sm
+              font-medium
+            "
+          >
+            Login
+          </a>
         </div>
       </div>
     </div>
