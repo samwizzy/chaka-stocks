@@ -1,3 +1,21 @@
-.active {
+.active-app {
   @apply bg-gray-900 text-white;
+}
+
+#user-menu ~ #user-menu-dropdown {
+  @apply transform;
+  @apply ease-in duration-75 opacity-0 scale-0;
+}
+
+#user-menu ~ #user-menu-dropdown:focus-within,
+#user-menu:focus ~ #user-menu-dropdown {
+  @apply ease-out duration-100 opacity-100 scale-100;
+}
+
+.active {
+  @apply ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-purple-600 hover:bg-purple-700;
+}
+
+.active-1 {
+  @apply ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-purple-600 hover:bg-purple-700;
 }

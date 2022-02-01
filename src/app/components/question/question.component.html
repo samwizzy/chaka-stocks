@@ -2,3 +2,13 @@
   <p>{{ question.title }}</p>
   <span> {{ question.body }}</span>
 </div>
+
+<button style="border: 1px solid #aaa" (click)="changeFromParent()">
+  Click from question
+</button>
+
+<hr class="my-5" />
+
+<app-answer [message]="msg" (onAnswer)="getFromAnswer($event)"></app-answer>
+
+<ng-content></ng-content>

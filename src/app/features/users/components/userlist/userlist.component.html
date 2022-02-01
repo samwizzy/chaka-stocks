@@ -1,0 +1,8 @@
+<div class="max-w-7xl mx-auto my-16 px-6 sm:px-4">
+  <h3>Users</h3>
+  <ul>
+    <li *ngFor="let user of users$ | async; index as i">
+      {{ i }} {{ user.firstName }}
+    </li>
+  </ul>
+</div>

@@ -1,11 +1,11 @@
-<div class="max-w-7xl mx-auto my-16 md:px-0 px-8">
+<div class="max-w-7xl mx-auto my-16 sm:px-4 px-6">
   <div class="mb-4">
     <span class="uppercase font-thin text-xs">market view</span>
     <h2 class="font-bold text-lg text-gray-800">Today's market briefing.</h2>
   </div>
 
   <div class="flex space-x-3 items-center overflow-x-auto">
-    <div class="item" *ngFor="let item of stocks">
+    <div class="item" *ngFor="let item of stocks$ | async">
       <div>
         <h3 class="font-bold">{{ item.company }}</h3>
         <span class="font-thin text-sm">{{ item.slug }}</span>
@@ -36,7 +36,7 @@
       <div class="grid md:grid-cols-2 md:gap-4 gap-0">
         <div
           class="border h-32 md:grid-cols-1 grid-cols-2 highlight"
-          *ngFor="let item of highlights | slice: 1:3"
+          *ngFor="let item of highlights$ | async | slice: 1:3"
           [style.background-image]="'url(' + item.image + ')'"
         >
           <div>

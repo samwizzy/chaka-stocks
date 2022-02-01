@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { from, Observable, of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 let users = [
   { id: 1, name: 'Samuel', email: 'samwize.inc@gmail.com' },
@@ -9,60 +10,37 @@ let users = [
   { id: 5, name: 'Femi', email: 'femi.inc@gmail.com' },
 ];
 
+interface IUser {
+  id: number;
+  name: string;
+  email: string;
+}
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.scss'],
 })
-export class PlayComponent implements OnInit {
-  users: any = users;
-  lastname: string = '';
-  link: string = 'https://google.com';
-  anchor: string = 'This is my link <a href="https://google.com">google</a>';
-  form: any = {
-    email: '',
-    surname: '',
-    password: '',
-  };
+export class PlayComponent implements OnInit, OnChanges {
+  users!: Observable<any[]>;
+  num!: Observable<any>;
+  indexes = of([1, 2, 3, 4, 5]);
+  username: string = 'Samuel';
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  onModelChange() {
-    console.log(this.form.surname, 'surname');
+  ngOnInit(): void {
+    this.users = of(users).pipe(
+      tap((data) => console.log(data, 'hey')),
+      map((data) => data)
+    );
+    this.num = this.indexes.pipe(map((data) => data.filter((i) => i > 2)));
   }
 
-  onChange(value: any) {
-    console.log(value);
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.username, 'onChange');
   }
 
-  btnClick() {
-    console.log('I was clicked');
-  }
-
-  onChangeLastname(ev: any) {
-    console.log(ev.target.value);
-  }
-
-  submit(form: NgForm) {
-    console.log(form.value);
-  }
-
-  handleSubmit() {
-    console.log(this.form);
-  }
-
-  onSubmit(e: any) {
-    e.preventDefault();
-    console.log(this.lastname, 'lastname');
-  }
-
-  identify(index: number, item: any) {
-    return item.name;
-  }
-
-  refresh(): void {
-    this.users.push({ id: 6, name: 'Tolani', email: 'tolani@gmail.com' });
+  log(value: any) {
+    console.log(value.value, 'weird');
   }
 }

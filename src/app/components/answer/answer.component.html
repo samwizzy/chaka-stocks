@@ -1,0 +1,8 @@
+<p>{{ message }}</p>
+
+<button style="border: 1px solid #aaa" (click)="changeViewMessage()">
+  Change
+</button>
+
+<input type="text" #item style="border: 1px solid #aaa" />
+<button (click)="sendValue(item.value)">Send to parent</button>

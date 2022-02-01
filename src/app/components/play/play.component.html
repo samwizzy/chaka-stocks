@@ -1,97 +1,39 @@
-<div class="max-w-7xl mx-auto my-16 md:px-4 sm:px-6 px-8">
-  <ul class="mb-4">
-    <li
-      *ngFor="
-        let user of users;
-        index as i;
-        first as isFirst;
-        trackBy: identify
-      "
-    >
-      {{ i }}/{{ users.length }} {{ user.name }}
-      <span *ngIf="isFirst">default</span>
-    </li>
+<div class="max-w-7xl mx-auto my-16 px-4 sm:px-6 mt-16">
+  <form>
+    <!-- <input
+    class="border border-gray-600"
+    type="text"
+    name="username"
+    [value]="username"
+    class="input"
+    ngModel
+    (ngModelChange)="changeModel($event)"
+    #user
+    (input)="changeInput($event)"
+    (input)="getTemplateValue(user.value)"
+    [(ngModel)]="username"
+  /> -->
+    <!-- <input ngModel #username="ngModel" (change)="log(username)" name="username" /> -->
+
+    <button type="submit">Save</button>
+  </form>
+
+  <ul *appRepeat="5">
+    <li>Hi there!</li>
   </ul>
-  <button mat-stroked-button color="primary" (click)="refresh()">
-    <mat-icon aria-label="refresh">refresh</mat-icon> Refresh
-  </button>
 
-  <mat-divider class="divider"></mat-divider>
+  <p appHighlight>hightlight example test</p>
 
-  <form (ngSubmit)="submit(f)" #f="ngForm">
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>Email address</mat-label>
-      <input type="email" name="email" ngModel matInput />
-    </mat-form-field>
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>Password</mat-label>
-      <input type="password" name="password" ngModel matInput />
-    </mat-form-field>
+  <table class="table">
+    <tbody>
+      <tr *ngFor="let item of users | async">
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <button mat-stroked-button color="primary" type="submit">
-      Submit <mat-icon aria-label="send">send</mat-icon>
-    </button>
-  </form>
-
-  <p>{{ link | linkify }}</p>
-
-  <p>{{ anchor | stripHtml }}</p>
-
-  <app-button
-    [text]="'Hey buddies'"
-    [color]="'#fff'"
-    (trigger)="btnClick()"
-  ></app-button>
-
-  <br />
-
-  <form (ngSubmit)="handleSubmit()">
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>Email address</mat-label>
-      <input type="email" name="email" [(ngModel)]="form.email" matInput />
-    </mat-form-field>
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>Username</mat-label>
-      <input
-        type="text"
-        name="username"
-        (change)="onChange(username.value)"
-        matInput
-        #username
-      />
-    </mat-form-field>
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>First name</mat-label>
-      <input
-        type="text"
-        [value]="lastname"
-        name="lastname"
-        (input)="onChangeLastname($event)"
-        matInput
-      />
-    </mat-form-field>
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>Surname</mat-label>
-      <input
-        type="text"
-        name="surname"
-        [(ngModel)]="form.surname"
-        (ngModelChange)="onModelChange()"
-        matInput
-      />
-    </mat-form-field>
-    <mat-form-field class="w-full" appearance="outline">
-      <mat-label>Password</mat-label>
-      <input
-        type="password"
-        name="password"
-        [(ngModel)]="form.password"
-        matInput
-      />
-    </mat-form-field>
-
-    <button mat-stroked-button color="primary" type="submit">
-      Submit <mat-icon aria-label="send">send</mat-icon>
-    </button>
-  </form>
+  <ul>
+    <li *ngFor="let item of num | async">{{ item }}</li>
+  </ul>
 </div>

@@ -3,17 +3,19 @@ import { StockService } from '../../services/stock/stock.service';
 import { Stock } from '../../interfaces/stock';
 import { Earnings } from '../../interfaces/earnings';
 import { Sectors } from '../../interfaces/sectors';
+import { Observable } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-page-one',
-  templateUrl: './page-one.component.html',
-  styleUrls: ['./page-one.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class PageOneComponent implements OnInit {
-  stocks: Stock[] = [];
+export class HomeComponent implements OnInit {
+  stocks$!: Observable<Stock[]>;
   earnings: Earnings[] = [];
   sectors: Sectors[] = [];
-  highlights: Sectors[] = [];
+  highlights$!: Observable<Sectors[]>;
 
   displayedColumns: string[] = [
     'symbol',
@@ -29,9 +31,7 @@ export class PageOneComponent implements OnInit {
   constructor(private stockService: StockService) {}
 
   ngOnInit(): void {
-    this.stockService.getStocks().subscribe((data) => {
-      this.stocks = data;
-    });
+    this.stocks$ = this.stockService.getStocks().pipe(map((data) => data));
 
     this.stockService.getEarnings().subscribe((data) => {
       this.earnings = data;
@@ -41,8 +41,9 @@ export class PageOneComponent implements OnInit {
       this.sectors = data;
     });
 
-    this.stockService.getSectorsHighlights().subscribe((data) => {
-      this.highlights = data;
-    });
+    this.highlights$ = this.stockService.getSectorsHighlights().pipe(
+      // filter((data) => data.rate > 0.2),
+      map((data) => data)
+    );
   }
 }

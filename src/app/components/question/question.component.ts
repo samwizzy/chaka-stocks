@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import {
@@ -17,9 +17,12 @@ import { QuestionService } from './question.service';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss'],
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent implements OnInit, OnChanges {
   questions$ = this.store.select(selectQuestions);
   questionCollection$ = this.store.select(selectQuestionCollection);
+
+  answers = ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4', 'Answer 5'];
+  msg = 'hello world';
 
   onAdd(questionId: string) {
     this.store.dispatch(addQuestion({ questionId }));
@@ -37,5 +40,17 @@ export class QuestionComponent implements OnInit {
       .subscribe((questions) =>
         this.store.dispatch(retrievedQuestionList({ questions }))
       );
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes, 'changes in parent');
+  }
+
+  changeFromParent() {
+    this.msg = 'Hello from the parent question';
+  }
+
+  getFromAnswer(value: any) {
+    console.log(value, 'from answer');
   }
 }

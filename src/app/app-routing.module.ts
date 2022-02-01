@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageOneComponent } from './components/page-one/page-one.component';
+import { HomeComponent } from './components/home/home.component';
 import { PageTwoComponent } from './components/page-two/page-two.component';
 import { PageThreeComponent } from './components/page-three/page-three.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -11,7 +11,7 @@ import { QuestionComponent } from './components/question/question.component';
 import { CountriesComponent } from './components/countries/countries.component';
 
 const routes: Routes = [
-  { path: '', component: PageOneComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'page-two', component: PageTwoComponent },
@@ -22,7 +22,12 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () =>
-      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+      import('./features/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./features/users/users.module').then((m) => m.UsersModule),
   },
 ];
 
