@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NewsService {
-  apiUrl: string = 'http://localhost:3000/news';
+  constructor(private http: HttpClient, private firestore: Firestore) {}
 
-  constructor(private http: HttpClient) {}
-
-  getNews(): Observable<[]> {
-    return this.http.get<[]>(this.apiUrl);
+  getNews(): Observable<any[]> {
+    const data = collection(this.firestore, 'news');
+    return collectionData(data);
   }
 }

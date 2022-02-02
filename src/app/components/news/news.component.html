@@ -1,0 +1,28 @@
+<div class="max-w-6xl mx-auto my-16 md:p-0 p-8">
+  <div *ngIf="news | async as list; else loading">
+    <div
+      class="md:flex block items-start md:mb-4 mb-8"
+      *ngFor="let item of news | async"
+    >
+      <div class="mr-4 flex-shrink-0">
+        <img class="md:w-40 w-full" src="{{ item.image }}" alt="" />
+      </div>
+      <div class="">
+        <h3 class="font-bold text-gray-800 text-lg">
+          {{ item.title }}
+        </h3>
+        <p class="text-sm text-gray-600">
+          {{ item.body }}
+        </p>
+        <span>Read more</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="flex items-center space-x-1">
+      <mat-spinner [diameter]="24"></mat-spinner>
+      <p class="text-sm text-gray-600">Loading...</p>
+    </div>
+  </ng-template>
+</div>

@@ -1,6 +1,6 @@
 <div class="max-w-7xl mx-auto my-16 sm:px-4 px-6">
   <div class="mb-4">
-    <span class="uppercase font-thin text-xs">market view</span>
+    <span class="uppercase font-light text-xs">market view</span>
     <h2 class="font-bold text-lg text-gray-800">Today's market briefing.</h2>
   </div>
 
@@ -8,7 +8,7 @@
     <div class="item" *ngFor="let item of stocks$ | async">
       <div>
         <h3 class="font-bold">{{ item.company }}</h3>
-        <span class="font-thin text-sm">{{ item.slug }}</span>
+        <span class="font-light text-sm">{{ item.slug }}</span>
       </div>
       <div class="flex flex-col">
         <span class="font-bold">{{ item.amount }}</span>
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div>
-    <p class="text-gray-600 text-sm font-thin">
+    <p class="text-gray-600 text-sm font-light">
       Active stocks last updated Dec 29 2021
     </p>
   </div>
@@ -29,7 +29,7 @@
   <div class="grid grid-cols-12 md:gap-8 gap-0 mt-6">
     <div class="col-span-12 md:col-span-8 md:mb-0 mb-8">
       <h3 class="font-bold text-lg text-gray-800">Sector hightlights</h3>
-      <span class="text-gray-600 text-sm font-thin"
+      <span class="text-gray-600 text-sm font-light"
         >Dec 29 2020 09:10:23 pm</span
       >
 
@@ -57,7 +57,7 @@
         <span class="font-bold text-lg text-gray-800">My watchlist</span>
         <mat-icon aria-label="star">star</mat-icon>
       </h3>
-      <span class="text-gray-600 text-sm font-thin">
+      <span class="text-gray-600 text-sm font-light">
         Your watchlist is empty, build your watchlist by starring the stock you
         want to follow
       </span>
@@ -71,7 +71,7 @@
       <div class="text-sm text-gray-700">Amount</div>
     </div>
     <hr class="border-t border-gray-100 my-4" />
-    <div class="text-gray-600 text-sm font-thin">
+    <div class="text-gray-600 text-sm font-light">
       There are no upcoming dividends
     </div>
   </div>
@@ -143,7 +143,7 @@
 
   <div class="mt-6">
     <h2 class="font-bold text-lg text-gray-800">Sector Performer</h2>
-    <span class="font-thin text-sm">Dec 29 2020 09:10:23 pm</span>
+    <span class="font-light text-sm">Dec 29 2020 09:10:23 pm</span>
 
     <div class="md:flex block md:gap-4 items-center md:flex-wrap mt-4">
       <div

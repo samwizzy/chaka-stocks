@@ -9,8 +9,6 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class StockService {
-  apiUrl: string = 'http://localhost:3000';
-
   constructor(private http: HttpClient, private firestore: Firestore) {}
 
   getStocks(): Observable<any[]> {
@@ -32,9 +30,4 @@ export class StockService {
     const data = collection(this.firestore, 'sectors');
     return collectionData(data);
   }
-  // getSectorsHighlights(): Observable<any[]> {
-  //   return this.http
-  //     .get<any[]>(`${this.apiUrl}/sectors`)
-  //     .pipe(map((res) => res.filter((data) => data.rate > 0.33)));
-  // }
 }

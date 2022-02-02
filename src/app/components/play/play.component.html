@@ -18,8 +18,8 @@
     <button type="submit">Save</button>
   </form>
 
-  <ul *appRepeat="5">
-    <li>Hi there!</li>
+  <ul>
+    <li *appRepeat="5">Hi there!</li>
   </ul>
 
   <p appHighlight>hightlight example test</p>
@@ -33,7 +33,9 @@
     </tbody>
   </table>
 
-  <ul>
-    <li *ngFor="let item of num | async">{{ item }}</li>
-  </ul>
+  <span #el>Span highlight</span>
+  <hr />
+  <ng-template #temp ngIf="true">Show</ng-template>
+  <hr />
+  <ng-container #cont>Great</ng-container>
 </div>

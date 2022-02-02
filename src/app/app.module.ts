@@ -17,8 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
-import { PageTwoComponent } from './components/page-two/page-two.component';
-import { PageThreeComponent } from './components/page-three/page-three.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { NewsComponent } from './components/news/news.component';
 import { EchartsComponent } from './components/echarts/echarts.component';
 import { PlayComponent } from './components/play/play.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -37,8 +37,8 @@ import { environment } from 'src/environments/environment';
   declarations: [
     AppComponent,
     HomeComponent,
-    PageTwoComponent,
-    PageThreeComponent,
+    AnalyticsComponent,
+    NewsComponent,
     EchartsComponent,
     PlayComponent,
     LoginComponent,
